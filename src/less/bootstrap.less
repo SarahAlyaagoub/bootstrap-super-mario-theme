@@ -1,0 +1,80 @@
+@import "../../bower_components/bootstrap/less/bootstrap";
+@import "variables";
+@import "mixins";
+@import "clouds";
+@import "world";
+
+.navbar {
+  border-width: 3px 0 3px;
+
+  &.navbar-default {
+    ._brick;
+
+    border-top-color: #ffc6bf;
+    border-bottom-color: #000;
+
+    .navbar-brand {
+      text-shadow: 2px 2px #000;
+    }
+
+    .navbar-nav {
+      > li {
+
+        &.active {
+          > a {
+            background-color: @navbar-default-link-active-bg;
+            box-shadow:
+              0 -3px 0 0 @brand-danger,
+              3px 0 0 0 #000,
+              -3px 0 0 0 @brand-danger,
+              0 3px 0 0 #000,
+              0 -3px 0 3px @body-bg;
+          }
+        }
+
+        > a {
+          ._dot;
+
+          background-color: @brand-danger;
+          box-shadow:
+            0 -3px 0 0 #000,
+            3px 0 0 0 #000,
+            -3px 0 0 0 #000,
+            0 3px 0 0 #000,
+            0 -3px 0 3px @body-bg;
+          margin-right: 3px;
+          margin-left: 3px;
+          text-shadow: 2px 2px #000;
+        }
+      }
+    }
+
+  }
+}
+
+.form-control {
+  font-family: "Press Start 2P", cursive;
+}
+
+.btn {
+  font-family: "Press Start 2P", cursive;
+  text-shadow: 2px 2px rgba(0,0,0,.3);
+}
+
+.jumbotron {
+  ._dot(24px);
+
+  background-color: @brand-danger;
+  text-align: center;
+  box-shadow:
+    0 -3px 0 0 #000,
+    3px 0 0 0 #000,
+    -3px 0 0 0 #000,
+    0 3px 0 0 #000,
+    0 -3px 0 3px @body-bg;
+
+  h1,
+  .h1 {
+    text-shadow: 5px 5px #000;
+  }
+}

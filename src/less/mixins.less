@@ -1,0 +1,45 @@
+@import "variables";
+
+._brick {
+
+  @color: @brand-danger;
+  @width: 24px;
+  @height: 10px;
+  @gap: 2px;
+
+  background-color: #000 !important;
+  background-image:
+          linear-gradient(335deg, @color @height, transparent @height),
+          linear-gradient(155deg, @color @height, transparent @height),
+          linear-gradient(335deg, @color @height, transparent @height),
+          linear-gradient(155deg, @color @height, transparent @height);
+  background-size: 28px 28px;
+  background-position: 0px -3px, 5px 14px,13px 11px,18px 0px;
+}
+
+._dot(@padding: 12px) {
+  position: relative;
+  @dot-size: 3px;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: @padding;
+    top: 0;
+    background-image:
+            radial-gradient(circle at center, #000 @dot-size, transparent @dot-size),
+            radial-gradient(circle at center, #000 @dot-size, transparent @dot-size);
+    background-size: @padding @padding;
+    background-position: top center, bottom center;
+    background-repeat: no-repeat;
+  }
+
+  &:before {
+    left: 0;
+  }
+  &:after {
+    right: 0;
+  };
+}
